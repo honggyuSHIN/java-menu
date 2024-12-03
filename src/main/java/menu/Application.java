@@ -1,7 +1,13 @@
 package menu;
 
+import menu.controller.PersonController;
+import menu.service.MenuService;
+
 public class Application {
     public static void main(String[] args) {
-        // TODO: 프로그램 구현
+        MenuService saveMenuService = new MenuService();
+
+        PersonController personController = new PersonController(saveMenuService);
+        personController.run();
     }
 }
